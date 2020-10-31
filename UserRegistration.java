@@ -65,7 +65,7 @@ class UserRegistration {
 
 	public static String validPassword(String pass) {		//password validation method
 
-		String pat = "^*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$";
+		String pat = "^*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
 		if(pass.matches(pat))
 			return "password is Valid";
 		else
