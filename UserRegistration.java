@@ -8,18 +8,22 @@ class UserRegistration {
 
 		System.out.println("Enter first name:");
 		String fname = sc.next();
-		System.out.println(validFirstName(fname));
+		System.out.println(validFirstName(fname));		//call to the first name validation method
 		
 		System.out.println("Enter last name:");
 		String lname = sc.next();
-		System.out.println(validLastName(lname));
+		System.out.println(validLastName(lname));		//call to the last name validation method
 		
 		System.out.println("Enter email:");
 		String email = sc.next();
-		System.out.println(validEmail(email));
+		System.out.println(validEmail(email));			//call to the mail validation method
+		
+		System.out.println("Enter mobile number:");
+		String number = sc.next();
+		System.out.println(validNumber(number));		//call to the mobile number validation method
 	}
 
-	public static String validFirstName(String fname) {
+	public static String validFirstName(String fname) {		// first name validation method
 
 		String pat = "^[A-Z]{1}[a-z]*";
 		if(fname.matches(pat))
@@ -28,7 +32,7 @@ class UserRegistration {
 			return "First name is InValid";
 	}
 	
-	public static String validLastName(String lname) {
+	public static String validLastName(String lname) {		//last name validation method
 
 		String pat = "^[A-Z]{1}[a-z]*";
 		if(lname.matches(pat))
@@ -37,12 +41,21 @@ class UserRegistration {
 			return "Last name is InValid";
 	}
 	
-	public static String validEmail(String email) {
+	public static String validEmail(String email) {			//email validation method
 
 		String pat = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.]+(co|com|in|au)$";
 		if(email.matches(pat))
 			return "email is Valid";
 		else
 			return "email is InValid";
+	}
+	
+	public static String validNumber(String number) {		//mobile number validation method
+
+		String pat = "(0|91)?[7-9][0-9]{9}";
+		if(number.matches(pat))
+			return "mobile number is Valid";
+		else
+			return "mobile number is InValid";
 	}
 }
