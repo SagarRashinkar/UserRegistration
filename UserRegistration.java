@@ -21,6 +21,10 @@ class UserRegistration {
 		System.out.println("Enter mobile number:");
 		String number = sc.next();
 		System.out.println(validNumber(number));		//call to the mobile number validation method
+		
+		System.out.println("Enter password:");
+		String pass = sc.next();
+		System.out.println(validPassword(pass));		//call to the password validation method
 	}
 
 	public static String validFirstName(String fname) {		// first name validation method
@@ -57,5 +61,14 @@ class UserRegistration {
 			return "mobile number is Valid";
 		else
 			return "mobile number is InValid";
+	}
+
+	public static String validPassword(String pass) {		//password validation method
+
+		String pat = "[a-zA-Z0-9]{8}[a-zA-Z0-9]*";
+		if(pass.matches(pat))
+			return "password is Valid";
+		else
+			return "password is InValid";
 	}
 }
