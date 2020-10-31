@@ -6,7 +6,7 @@ class UserRegistration {
 
 		Scanner sc = new Scanner(System.in);			//Scanner class to take input from user
 
-		System.out.println("Enter first name:");
+		/*System.out.println("Enter first name:");
 		String fname = sc.next();
 		System.out.println(validFirstName(fname));		//call to the first name validation method
 		
@@ -21,7 +21,7 @@ class UserRegistration {
 		System.out.println("Enter mobile number:");
 		String number = sc.next();
 		System.out.println(validNumber(number));		//call to the mobile number validation method
-		
+		*/
 		System.out.println("Enter password:");
 		String pass = sc.next();
 		System.out.println(validPassword(pass));		//call to the password validation method
@@ -65,7 +65,7 @@ class UserRegistration {
 
 	public static String validPassword(String pass) {		//password validation method
 
-		String pat = "[A-Z][a-zA-Z0-9!@#$%^&*~]{7}[a-zA-Z0-9]*";
+		String pat = "^*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
 		if(pass.matches(pat))
 			return "password is Valid";
 		else
